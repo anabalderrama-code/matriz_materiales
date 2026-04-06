@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lámina de Sistemas — Pabellón PR26</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F0E8;
+    --ink: #1A1612;
+    --warm-gray: #8C8070;
+    --accent: #C4A35A;
+    --accent-light: #E8D5A3;
+    --rust: #8B3A2A;
+    --pale: #EDE8DE;
+    --line: #C8BFA8;
+  }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Mono', monospace;
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 48px 60px 36px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 40px;
+    border-bottom: 4px solid var(--accent);
+  }
+
+  .header-left {}
+
+  .header-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .header-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 7vw, 88px);
+    line-height: 0.9;
+    letter-spacing: 2px;
+    color: var(--cream);
+  }
+
+  .header-title span {
+    color: var(--accent);
+  }
+
+  .header-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--warm-gray);
+    margin-top: 16px;
+    max-width: 480px;
+    line-height: 1.5;
+  }
+
+  .header-right {
+    text-align: right;
+  }
+
+  .header-meta {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    line-height: 2.2;
+  }
+
+  .header-meta strong {
+    color: var(--accent);
+    display: block;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  /* ── CONCEPTO BANNER ── */
+  .concepto-banner {
+    background: var(--accent);
+    padding: 18px 60px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .concepto-tag {
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: 0.6;
+    white-space: nowrap;
+  }
+
+  .concepto-line {
+    flex: 1;
+    height: 1px;
+    background: var(--ink);
+    opacity: 0.2;
+  }
+
+  .concepto-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  /* ── MAIN GRID ── */
+  .main {
+    padding: 48px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* ── SISTEMA CARD ── */
+  .sistema {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    border-bottom: 1px solid var(--line);
+    padding: 40px 0;
+    gap: 0;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .sistema:last-child { border-bottom: none; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .sistema:nth-child(1) { animation-delay: 0.1s; }
+  .sistema:nth-child(2) { animation-delay: 0.2s; }
+  .sistema:nth-child(3) { animation-delay: 0.3s; }
+  .sistema:nth-child(4) { animation-delay: 0.4s; }
+  .sistema:nth-child(5) { animation-delay: 0.5s; }
+
+  /* ── NUMERO LATERAL ── */
+  .sistema-num {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    color: var(--line);
+    line-height: 1;
+    align-self: start;
+    padding-top: 4px;
+    letter-spacing: 2px;
+  }
+
+  /* ── CONTENIDO ── */
+  .sistema-content {
+    padding-left: 32px;
+    border-left: 1px solid var(--line);
+  }
+
+  .sistema-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    margin-bottom: 28px;
+    gap: 20px;
+  }
+
+  .sistema-tag {
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .sistema-nombre {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 1px;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .sistema-descripcion {
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--warm-gray);
+    margin-top: 6px;
+    max-width: 500px;
+    font-style: italic;
+  }
+
+  .score-badge {
+    background: var(--ink);
+    color: var(--accent);
+    padding: 12px 20px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .score-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    line-height: 1;
+    display: block;
+  }
+
+  .score-denom {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--warm-gray);
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* ── MATERIAL SELECCIONADO ── */
+  .material-selected {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .material-rank {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .material-info {}
+
+  .material-nombre {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: var(--cream);
+    line-height: 1;
+  }
+
+  .material-spec {
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+
+  .material-winner-tag {
+    background: var(--accent);
+    color: var(--ink);
+    padding: 4px 10px;
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    align-self: start;
+  }
+
+  /* ── GRID DE DATOS ── */
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    margin-bottom: 20px;
+    border: 1px solid var(--line);
+  }
+
+  .data-cell {
+    background: var(--pale);
+    padding: 14px 16px;
+  }
+
+  .data-label {
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 4px;
+  }
+
+  .data-value {
+    font-size: 12px;
+    color: var(--ink);
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  .data-value.highlight {
+    color: var(--rust);
+    font-weight: 500;
+  }
+
+  /* ── CRITERIOS BAR ── */
+  .criterios-section {
+    margin-bottom: 20px;
+  }
+
+  .criterios-title {
+    font-size: 8px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .criterios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .criterio-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .criterio-label {
+    font-size: 9px;
+    color: var(--warm-gray);
+    width: 160px;
+    flex-shrink: 0;
+    line-height: 1.3;
+  }
+
+  .criterio-bar-wrap {
+    flex: 1;
+    height: 4px;
+    background: var(--line);
+    position: relative;
+  }
+
+  .criterio-bar {
+    height: 100%;
+    background: var(--accent);
+    transition: width 1s ease;
+  }
+
+  .criterio-bar.low { background: var(--rust); }
+  .criterio-bar.mid { background: var(--warm-gray); }
+  .criterio-bar.high { background: var(--accent); }
+
+  .criterio-score {
+    font-size: 9px;
+    color: var(--ink);
+    font-weight: 500;
+    width: 28px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* ── HERRAMIENTAS ── */
+  .herramientas {
+    background: var(--pale);
+    border-left: 3px solid var(--accent);
+    padding: 14px 18px;
+    margin-bottom: 20px;
+  }
+
+  .herramientas-title {
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 8px;
+  }
+
+  .herramientas-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .herramienta-tag {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 3px 10px;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  /* ── NOTA PROFESIONAL ── */
+  .nota-pro {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px;
+    align-items: start;
+  }
+
+  .nota-icon {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .nota-texto {
+    font-size: 10px;
+    line-height: 1.7;
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  /* ── RANKING SECUNDARIO ── */
+  .ranking {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .ranking-item {
+    flex: 1;
+    border: 1px solid var(--line);
+    padding: 10px 12px;
+    position: relative;
+  }
+
+  .ranking-item.pos-1 {
+    border-color: var(--accent);
+    background: rgba(196,163,90,0.06);
+  }
+
+  .ranking-pos {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--line);
+    line-height: 1;
+  }
+
+  .ranking-item.pos-1 .ranking-pos {
+    color: var(--accent);
+  }
+
+  .ranking-mat {
+    font-size: 9px;
+    color: var(--ink);
+    margin-top: 2px;
+    line-height: 1.3;
+    font-weight: 500;
+  }
+
+  .ranking-pts {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--warm-gray);
+    margin-top: 2px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--ink);
+    padding: 24px 60px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 20px;
+    border-top: 4px solid var(--accent);
+    margin-top: 0;
+  }
+
+  .footer-left {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+  }
+
+  .footer-center {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--accent);
+    letter-spacing: 4px;
+    text-align: center;
+  }
+
+  .footer-right {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    text-align: right;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--line), transparent);
+    margin: 0;
+  }
+
+  @media print {
+    body { background: white; }
+    .sistema { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <div class="header-label">UDEM — Estudio de Elementos de Diseño — PR26</div>
+    <div class="header-title">SISTEMAS<br>DE <span>MATERIAL</span></div>
+    <div class="header-subtitle">Análisis exhaustivo por sistema constructivo para el pabellón efímero ubicado en el Sitio 3 — Descenso hacia la Gruta</div>
+  </div>
+  <div class="header-right">
+    <div class="header-meta">
+      <strong>SITIO 03</strong>
+      TRANSICIÓN / TRÁNSITO<br>
+      DESCENSO HACIA LA GRUTA<br>
+      ——<br>
+      2.0m × 4.5m<br>
+      PRESUPUESTO TOTAL $30,000 MXN<br>
+      DURACIÓN 6 MESES<br>
+      14 PERSONAS SIN EXPERIENCIA<br>
+      ——<br>
+      ACCESO CRGS — UDEM
+    </div>
+  </div>
+</div>
+
+<!-- CONCEPTO BANNER -->
+<div class="concepto-banner">
+  <span class="concepto-tag">Concepto rector</span>
+  <div class="concepto-line"></div>
+  <div class="concepto-text">"El umbral que despoja"</div>
+  <div class="concepto-line"></div>
+  <span class="concepto-tag">Sitio 03 — Gruta UDEM</span>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!-- SISTEMA 01 — ESTRUCTURA PRIMARIA -->
+  <!-- ══════════════════════════════════════════════════ -->
+  <div class="sistema">
+    <div class="sistema-num">01</div>
+    <div class="sistema-content">
+
+      <div class="sistema-header">
+        <div>
+          <div class="sistema-tag">Sistema constructivo principal</div>
+          <div class="sistema-nombre">Estructura Primaria</div>
+          <div class="sistema-descripcion">El esqueleto que carga todo lo demás — marcos portantes que definen el volumen espacial de 2.0 × 4.5m. Su rigidez y durabilidad determinan la viabilidad del pabellón completo durante los 6 meses de exposición en el descenso hacia la Gruta.</div>
+        </div>
+        <div class="score-badge">
+          <span class="score-num">97</span>
+          <span class="score-denom">/ 112 pts</span>
+        </div>
+      </div>
+
+      <!-- MATERIAL GANADOR -->
+      <div class="material-selected">
+        <div class="material-rank">🥇</div>
+        <div class="material-info">
+          <div class="material-nombre">Polín de Pino Tratado</div>
+          <div class="material-spec">Sección 4"×4" (9×9cm real) — Tratamiento autoclave clase C — Pino radiata o elliottii</div>
+        </div>
+        <div class="material-winner-tag">Material seleccionado</div>
+      </div>
+
+      <!-- DATA GRID -->
+      <div class="data-grid">
+        <div class="data-cell">
+          <div class="data-label">Sección</div>
+          <div class="data-value">4"×4" (9×9cm real)</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Tratamiento</div>
+          <div class="data-value">Autoclave clase C — intemperie</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Costo estimado estructura</div>
+          <div class="data-value">$1,800 — $2,400 MXN</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Costo por metro lineal</div>
+          <div class="data-value">$60 — $80 MXN / ml</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Metros lineales estimados</div>
+          <div class="data-value">~30 ml totales</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Puntos de venta locales</div>
+          <div class="data-value">Home Depot · Construrama · Madererías MTY</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Peso por metro lineal</div>
+          <div class="data-value">~3.5 kg/ml</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Resistencia a compresión</div>
+          <div class="data-value">~35 MPa (pino tratado)</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Mantenimiento requerido</div>
+          <div class="data-value highlight">1 mano de sellador a los 3 meses</div>
+        </div>
+      </div>
+
+      <!-- HERRAMIENTAS -->
+      <div class="herramientas">
+        <div class="herramientas-title">Herramientas requeridas</div>
+        <div class="herramientas-list">
+          <span class="herramienta-tag">Sierra circular (CRGS)</span>
+          <span class="herramienta-tag">Taladro eléctrico</span>
+          <span class="herramienta-tag">Llave de impacto / rachet</span>
+          <span class="herramienta-tag">Escuadra de carpintero</span>
+          <span class="herramienta-tag">Flexómetro</span>
+          <span class="herramienta-tag">Lápiz de marcar</span>
+        </div>
+      </div>
+
+      <!-- CRITERIOS -->
+      <div class="criterios-section">
+        <div class="criterios-title">Evaluación por criterio</div>
+        <div class="criterios-grid">
+          <div class="criterio-row">
+            <div class="criterio-label">Viabilidad económica</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:80%"></div></div>
+            <div class="criterio-score">8/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Facilidad de desmontaje</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:87%"></div></div>
+            <div class="criterio-score">7/8</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Estructura resistente</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:80%"></div></div>
+            <div class="criterio-score">8/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Durabilidad</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar mid" style="width:86%"></div></div>
+            <div class="criterio-score">6/7</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Disponibilidad local</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">9/9</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Seguridad de conexiones</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:80%"></div></div>
+            <div class="criterio-score">8/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Seguridad del usuario</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:80%"></div></div>
+            <div class="criterio-score">8/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Reutilización / reciclaje</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:87%"></div></div>
+            <div class="criterio-score">7/8</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Comportamiento térmico</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">7/7 (máx)</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Resistencia a la humedad</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar mid" style="width:86%"></div></div>
+            <div class="criterio-score">6/7</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Herramientas requeridas</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:87%"></div></div>
+            <div class="criterio-score">7/8</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Costo de mantenimiento</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:70%"></div></div>
+            <div class="criterio-score">7/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Facilidad de elaboración</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">8/8 (máx)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RANKING -->
+      <div class="ranking">
+        <div class="ranking-item pos-1">
+          <div class="ranking-pos">1°</div>
+          <div class="ranking-mat">Polín pino tratado 4"×4"</div>
+          <div class="ranking-pts">97 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">2°</div>
+          <div class="ranking-mat">Madera plástica HDPE 4"×4"</div>
+          <div class="ranking-pts">94 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">3°</div>
+          <div class="ranking-mat">PTR acero 40×40mm cal.14</div>
+          <div class="ranking-pts">86 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">4°</div>
+          <div class="ranking-mat">Tubo PVC hidráulico 3"</div>
+          <div class="ranking-pts">83 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">5°</div>
+          <div class="ranking-mat">Bambú Guadua 8-10cm</div>
+          <div class="ranking-pts">72 pts</div>
+        </div>
+      </div>
+
+      <div class="nota-pro" style="margin-top:16px;">
+        <div class="nota-icon">→</div>
+        <div class="nota-texto">El polín de pino tratado con autoclave gana por su equilibrio entre costo, facilidad de elaboración y disponibilidad inmediata. Es el material más intuitivo para 14 personas sin experiencia — cortar, perforar y atornillar son procesos que no requieren capacitación previa. El tratamiento autoclave clase C es indispensable para garantizar 6 meses sin deterioro estructural en condiciones de humedad parcial.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!-- SISTEMA 02 — ANCLAJES Y CONEXIONES -->
+  <!-- ══════════════════════════════════════════════════ -->
+  <div class="sistema">
+    <div class="sistema-num">02</div>
+    <div class="sistema-content">
+
+      <div class="sistema-header">
+        <div>
+          <div class="sistema-tag">Sistema crítico de unión</div>
+          <div class="sistema-nombre">Anclajes y Conexiones</div>
+          <div class="sistema-descripcion">El punto donde la mayoría de los pabellones estudiantiles fallan. Las conexiones deben ser seguras, calculables, desmontables y ejecutables por personas sin experiencia previa. Una conexión mal resuelta puede comprometer todo el sistema estructural.</div>
+        </div>
+        <div class="score-badge">
+          <span class="score-num">106</span>
+          <span class="score-denom">/ 112 pts</span>
+        </div>
+      </div>
+
+      <div class="material-selected">
+        <div class="material-rank">🥇</div>
+        <div class="material-info">
+          <div class="material-nombre">Tirafondo Estructural + Escuadra Galvanizada</div>
+          <div class="material-spec">Tirafondo 5/8"×4" acero galvanizado + Escuadra Simpson Strong-Tie 90° cal.14 galvanizada</div>
+        </div>
+        <div class="material-winner-tag">Material seleccionado</div>
+      </div>
+
+      <div class="data-grid">
+        <div class="data-cell">
+          <div class="data-label">Diámetro tirafondo</div>
+          <div class="data-value">5/8" (15.9mm)</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Longitud tirafondo</div>
+          <div class="data-value">4" (100mm)</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Costo estimado total</div>
+          <div class="data-value">$1,500 — $2,000 MXN</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Costo por tirafondo</div>
+          <div class="data-value">$8 — $12 MXN c/u</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Costo por escuadra</div>
+          <div class="data-value">$25 — $40 MXN c/u</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Acabado</div>
+          <div class="data-value">Galvanizado en caliente — anticorrosivo</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Resistencia al corte</div>
+          <div class="data-value">~580 kg por tirafondo</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Desmontaje</div>
+          <div class="data-value">Taladro en reversa — 100% reversible</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Mantenimiento</div>
+          <div class="data-value highlight">Solo revisión visual de apriete</div>
+        </div>
+      </div>
+
+      <div class="herramientas">
+        <div class="herramientas-title">Herramientas requeridas</div>
+        <div class="herramientas-list">
+          <span class="herramienta-tag">Taladro eléctrico + broca guía 1/2"</span>
+          <span class="herramienta-tag">Llave de impacto / rachet con dado</span>
+          <span class="herramienta-tag">Escuadra de carpintero 90°</span>
+          <span class="herramienta-tag">Flexómetro</span>
+          <span class="herramienta-tag">Nivel de burbuja</span>
+        </div>
+      </div>
+
+      <div class="criterios-section">
+        <div class="criterios-title">Evaluación por criterio</div>
+        <div class="criterios-grid">
+          <div class="criterio-row">
+            <div class="criterio-label">Viabilidad económica</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:80%"></div></div>
+            <div class="criterio-score">8/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Facilidad de desmontaje</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">8/8 (máx)</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Estructura resistente</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:90%"></div></div>
+            <div class="criterio-score">9/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Durabilidad</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">7/7 (máx)</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Disponibilidad local</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">9/9 (máx)</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Seguridad de conexiones</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:90%"></div></div>
+            <div class="criterio-score">9/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Seguridad del usuario</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:90%"></div></div>
+            <div class="criterio-score">9/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Reutilización / reciclaje</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:87%"></div></div>
+            <div class="criterio-score">7/8</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Comportamiento térmico</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">7/7 (máx)</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Resistencia a la humedad</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">7/7 (máx)</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Herramientas requeridas</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">8/8 (máx)</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Costo de mantenimiento</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:90%"></div></div>
+            <div class="criterio-score">9/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Facilidad de elaboración</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">9/8 (máx)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ranking">
+        <div class="ranking-item pos-1">
+          <div class="ranking-pos">1°</div>
+          <div class="ranking-mat">Tirafondo 5/8" + escuadra galv.</div>
+          <div class="ranking-pts">106 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">2°</div>
+          <div class="ranking-mat">Perno pasante 3/8" + tuerca</div>
+          <div class="ranking-pts">105 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">3°</div>
+          <div class="ranking-mat">Bracket ajustable Simpson LPC4</div>
+          <div class="ranking-pts">103 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">4°</div>
+          <div class="ranking-mat">Placa acero A-36 + perno 1/2"</div>
+          <div class="ranking-pts">92 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">5°</div>
+          <div class="ranking-mat">Cuerda polipropileno 8mm</div>
+          <div class="ranking-pts">71 pts</div>
+        </div>
+      </div>
+
+      <div class="nota-pro" style="margin-top:16px;">
+        <div class="nota-icon">→</div>
+        <div class="nota-texto">El tirafondo + escuadra es la combinación natural con el polín de pino — el sistema más intuitivo, el más rápido de instalar y el único que no requiere coordinación entre dos personas para ejecutarse. Se recomienda complementar con perno pasante 3/8" en los nodos de mayor carga (esquinas y apoyos principales). La cuerda queda completamente descartada como conexión estructural — puede tener un rol estético pero nunca de carga.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!-- SISTEMA 03 — CELOSÍA / PIEL LATERAL -->
+  <!-- ══════════════════════════════════════════════════ -->
+  <div class="sistema">
+    <div class="sistema-num">03</div>
+    <div class="sistema-content">
+
+      <div class="sistema-header">
+        <div>
+          <div class="sistema-tag">Sistema de filtro y envolvente</div>
+          <div class="sistema-nombre">Celosía / Piel Lateral</div>
+          <div class="sistema-descripcion">Los filtros que definen las paredes del pabellón sin cerrarlas. No son muros — son umbrales de luz, sombra y visión. En "El umbral que despoja" este sistema es el que más directamente comunica la idea: va filtrando el exterior conforme avanzas por los 4.5 metros del recorrido.</div>
+        </div>
+        <div class="score-badge">
+          <span class="score-num">101</span>
+          <span class="score-denom">/ 112 pts</span>
+        </div>
+      </div>
+
+      <div class="material-selected">
+        <div class="material-rank">🥇</div>
+        <div class="material-info">
+          <div class="material-nombre">Listón de Pino Cepillado</div>
+          <div class="material-spec">Sección 1"×2" (2.5×5cm real) — Cepillado 4 caras — Pino tratado sellador exterior</div>
+        </div>
+        <div class="material-winner-tag">Material seleccionado</div>
+      </div>
+
+      <div class="data-grid">
+        <div class="data-cell">
+          <div class="data-label">Sección</div>
+          <div class="data-value">1"×2" (2.5×5cm real)</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Acabado</div>
+          <div class="data-value">Cepillado 4 caras + sellador exterior</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Costo estimado celosía</div>
+          <div class="data-value">$2,000 — $2,500 MXN</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Costo por metro lineal</div>
+          <div class="data-value">$8 — $12 MXN / ml</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Separación entre listones</div>
+          <div class="data-value">4 — 6cm (definir en proyecto)</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Fijación al marco</div>
+          <div class="data-value">Tornillo clavador 2" galvanizado</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Longitud estándar</div>
+          <div class="data-value">Hasta 2.0m sin apoyo intermedio</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Efecto lumínico</div>
+          <div class="data-value">Filtro de sombra — líneas de luz</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Mantenimiento</div>
+          <div class="data-value highlight">1 mano sellador a los 3 meses</div>
+        </div>
+      </div>
+
+      <div class="herramientas">
+        <div class="herramientas-title">Herramientas requeridas</div>
+        <div class="herramientas-list">
+          <span class="herramienta-tag">Sierra circular / de banco (CRGS)</span>
+          <span class="herramienta-tag">Taladro eléctrico</span>
+          <span class="herramienta-tag">Tornillo clavador 2"</span>
+          <span class="herramienta-tag">Lijadora orbital (CRGS)</span>
+          <span class="herramienta-tag">Distanciador de madera</span>
+          <span class="herramienta-tag">Brocha para sellador</span>
+        </div>
+      </div>
+
+      <div class="criterios-section">
+        <div class="criterios-title">Evaluación por criterio</div>
+        <div class="criterios-grid">
+          <div class="criterio-row">
+            <div class="criterio-label">Viabilidad económica</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:90%"></div></div>
+            <div class="criterio-score">9/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Facilidad de desmontaje</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:87%"></div></div>
+            <div class="criterio-score">7/8</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Estructura resistente</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:70%"></div></div>
+            <div class="criterio-score">7/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Durabilidad</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar mid" style="width:71%"></div></div>
+            <div class="criterio-score">5/7</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Disponibilidad local</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">9/9 (máx)</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Seguridad de conexiones</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:80%"></div></div>
+            <div class="criterio-score">8/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Seguridad del usuario</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:70%"></div></div>
+            <div class="criterio-score">7/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Reutilización / reciclaje</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:87%"></div></div>
+            <div class="criterio-score">7/8</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Comportamiento térmico</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">7/7 (máx)</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Resistencia a la humedad</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar mid" style="width:71%"></div></div>
+            <div class="criterio-score">5/7</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Herramientas requeridas</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">8/8 (máx)</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Costo de mantenimiento</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar mid" style="width:60%"></div></div>
+            <div class="criterio-score">6/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Facilidad de elaboración</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">9/8 (máx)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ranking">
+        <div class="ranking-item pos-1">
+          <div class="ranking-pos">1°</div>
+          <div class="ranking-mat">Listón pino cepillado 1"×2"</div>
+          <div class="ranking-pts">101 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">2°</div>
+          <div class="ranking-mat">Varilla roscada galv. 3/8"</div>
+          <div class="ranking-pts">93 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">3°</div>
+          <div class="ranking-mat">Cuerda polipropileno 8mm</div>
+          <div class="ranking-pts">92 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">4°</div>
+          <div class="ranking-mat">Policarbonato alveolar 6mm</div>
+          <div class="ranking-pts">90 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">5°</div>
+          <div class="ranking-mat">Caña de carrizo tratado 2-3cm</div>
+          <div class="ranking-pts">80 pts</div>
+        </div>
+      </div>
+
+      <div class="nota-pro" style="margin-top:16px;">
+        <div class="nota-icon">→</div>
+        <div class="nota-texto">El listón gana en puntuación pero la cuerda de polipropileno (3° lugar) dialoga más directamente con el concepto rector y con la imagen del pabellón de referencia. Se recomienda explorar una combinación: listón de pino en los laterales más expuestos al impacto físico, y cuerda tensada en la cara interior o en zonas donde se busca mayor permeabilidad visual. Esta combinación híbrida no compromete el presupuesto y enriquece la experiencia del recorrido.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!-- SISTEMA 04 — CUBIERTA -->
+  <!-- ══════════════════════════════════════════════════ -->
+  <div class="sistema">
+    <div class="sistema-num">04</div>
+    <div class="sistema-content">
+
+      <div class="sistema-header">
+        <div>
+          <div class="sistema-tag">Sistema de cierre superior</div>
+          <div class="sistema-nombre">Cubierta</div>
+          <div class="sistema-descripcion">El plano superior que da sombra, define el interior y regula la luz que entra. En el sitio 3, bajo el puente existente, la cubierta no resuelve lluvia directa pero sí debe crear la atmósfera de descenso y quietud — filtrando la luz que se cuela lateralmente y generando sombra tamizada coherente con el concepto.</div>
+        </div>
+        <div class="score-badge">
+          <span class="score-num">104</span>
+          <span class="score-denom">/ 112 pts</span>
+        </div>
+      </div>
+
+      <div class="material-selected">
+        <div class="material-rank">🥇</div>
+        <div class="material-info">
+          <div class="material-nombre">Malla Sombra Raschel 80%</div>
+          <div class="material-spec">Polietileno de alta densidad HDPE — Tratamiento UV de fábrica — Factor de sombra 80%</div>
+        </div>
+        <div class="material-winner-tag">Material seleccionado</div>
+      </div>
+
+      <div class="data-grid">
+        <div class="data-cell">
+          <div class="data-label">Material</div>
+          <div class="data-value">HDPE — Polietileno alta densidad</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Factor de sombra</div>
+          <div class="data-value">80% bloqueo radiación solar</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Costo estimado cubierta</div>
+          <div class="data-value">$225 — $315 MXN</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Costo por m²</div>
+          <div class="data-value">$25 — $35 MXN / m²</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Superficie a cubrir</div>
+          <div class="data-value">2.0 × 4.5m = 9.0 m²</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Fijación perimetral</div>
+          <div class="data-value">Ojillos + alambre galv. + tensores</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Resistencia UV</div>
+          <div class="data-value">Tratamiento de fábrica — 5 años exterior</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Peso</div>
+          <div class="data-value">~120 g/m² — prácticamente sin carga</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Mantenimiento</div>
+          <div class="data-value highlight">Cero — solo limpieza ocasional</div>
+        </div>
+      </div>
+
+      <div class="herramientas">
+        <div class="herramientas-title">Herramientas requeridas</div>
+        <div class="herramientas-list">
+          <span class="herramienta-tag">Tijeras resistentes para corte</span>
+          <span class="herramienta-tag">Taladro eléctrico (fijación tensores)</span>
+          <span class="herramienta-tag">Ojillos metálicos + pinza de ojalillo</span>
+          <span class="herramienta-tag">Alambre galvanizado delgado</span>
+          <span class="herramienta-tag">Flexómetro</span>
+        </div>
+      </div>
+
+      <div class="criterios-section">
+        <div class="criterios-title">Evaluación por criterio</div>
+        <div class="criterios-grid">
+          <div class="criterio-row">
+            <div class="criterio-label">Viabilidad económica</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:90%"></div></div>
+            <div class="criterio-score">9/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Facilidad de desmontaje</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">8/8 (máx)</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Estructura resistente</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar low" style="width:40%"></div></div>
+            <div class="criterio-score">4/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Durabilidad</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">7/7 (máx)</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Disponibilidad local</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">9/9 (máx)</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Seguridad de conexiones</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:70%"></div></div>
+            <div class="criterio-score">7/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Seguridad del usuario</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:90%"></div></div>
+            <div class="criterio-score">9/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Reutilización / reciclaje</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:87%"></div></div>
+            <div class="criterio-score">7/8</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Comportamiento térmico</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">7/7 (máx)</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Resistencia a la humedad</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">7/7 (máx)</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Herramientas requeridas</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">9/8 (máx)</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Costo de mantenimiento</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:90%"></div></div>
+            <div class="criterio-score">9/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Facilidad de elaboración</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">10/8 (máx)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ranking">
+        <div class="ranking-item pos-1">
+          <div class="ranking-pos">1°</div>
+          <div class="ranking-mat">Malla sombra Raschel 80% HDPE</div>
+          <div class="ranking-pts">104 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">2°</div>
+          <div class="ranking-mat">Listón pino 1"×3" trama separada</div>
+          <div class="ranking-pts">93 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">3°</div>
+          <div class="ranking-mat">Cuerda polipropileno 8mm tejida</div>
+          <div class="ranking-pts">91 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">4°</div>
+          <div class="ranking-mat">Policarbonato alveolar 6mm opal</div>
+          <div class="ranking-pts">90 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">5°</div>
+          <div class="ranking-mat">Palma tejida / petate natural</div>
+          <div class="ranking-pts">78 pts</div>
+        </div>
+      </div>
+
+      <div class="nota-pro" style="margin-top:16px;">
+        <div class="nota-icon">→</div>
+        <div class="nota-texto">La malla sombra gana por amplio margen en criterios técnicos pero es la única pieza que puede romper la coherencia material del pabellón. Se recomienda una estrategia híbrida: malla sombra Raschel como capa funcional base (invisible desde abajo) y sobre ella una trama de cuerda de polipropileno como capa visual. Esto garantiza durabilidad técnica sin sacrificar la intención conceptual — exactamente como en la imagen de referencia del pabellón.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!-- SISTEMA 05 — ELEMENTO FOCAL INTERIOR -->
+  <!-- ══════════════════════════════════════════════════ -->
+  <div class="sistema">
+    <div class="sistema-num">05</div>
+    <div class="sistema-content">
+
+      <div class="sistema-header">
+        <div>
+          <div class="sistema-tag">Sistema de remate y punto de llegada</div>
+          <div class="sistema-nombre">Elemento Focal Interior</div>
+          <div class="sistema-descripcion">La culminación del recorrido — lo que encuentras después de haber filtrado el ruido, la prisa y la carga del día. No es decoración: es el destino espacial que le da sentido a todo el tránsito anterior. En el concepto "El umbral que despoja", este elemento es el punto de máxima quietud del pabellón.</div>
+        </div>
+        <div class="score-badge">
+          <span class="score-num">94</span>
+          <span class="score-denom">/ 112 pts</span>
+        </div>
+      </div>
+
+      <div class="material-selected">
+        <div class="material-rank">🥇</div>
+        <div class="material-info">
+          <div class="material-nombre">Aro de Cuerda Tensada sobre Marco de Madera</div>
+          <div class="material-spec">Marco circular 1"×2" pino cepillado + Cuerda polipropileno 8mm trama radial — Diámetro 80-100cm</div>
+        </div>
+        <div class="material-winner-tag">Material seleccionado</div>
+      </div>
+
+      <div class="data-grid">
+        <div class="data-cell">
+          <div class="data-label">Diámetro recomendado</div>
+          <div class="data-value">80 — 100cm</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Marco</div>
+          <div class="data-value">Pino 1"×2" segmentos encolados</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Costo estimado total</div>
+          <div class="data-value">$150 — $300 MXN</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Trama interior</div>
+          <div class="data-value">Cuerda polipropileno 8mm radial</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Posición en el pabellón</div>
+          <div class="data-value">Extremo de llegada — fondo del eje</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Fijación a estructura</div>
+          <div class="data-value">Tornillos al marco principal</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Efecto visual</div>
+          <div class="data-value">Convergencia — punto de llegada</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Coherencia material</div>
+          <div class="data-value">Mismos materiales que celosía y cubierta</div>
+        </div>
+        <div class="data-cell">
+          <div class="data-label">Mantenimiento</div>
+          <div class="data-value highlight">Retensado ocasional de cuerda</div>
+        </div>
+      </div>
+
+      <div class="herramientas">
+        <div class="herramientas-title">Herramientas requeridas</div>
+        <div class="herramientas-list">
+          <span class="herramienta-tag">Sierra de banco CRGS (segmentos del marco)</span>
+          <span class="herramienta-tag">Plantilla circular en MDF como molde</span>
+          <span class="herramienta-tag">Pegamento PVA exterior</span>
+          <span class="herramienta-tag">Prensas o cinta de amarre</span>
+          <span class="herramienta-tag">Taladro eléctrico + broca 10mm</span>
+          <span class="herramienta-tag">Tijeras + encendedor para cuerda</span>
+        </div>
+      </div>
+
+      <div class="criterios-section">
+        <div class="criterios-title">Evaluación por criterio</div>
+        <div class="criterios-grid">
+          <div class="criterio-row">
+            <div class="criterio-label">Viabilidad económica</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:90%"></div></div>
+            <div class="criterio-score">9/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Facilidad de desmontaje</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:87%"></div></div>
+            <div class="criterio-score">7/8</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Estructura resistente</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar mid" style="width:50%"></div></div>
+            <div class="criterio-score">5/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Durabilidad</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar mid" style="width:86%"></div></div>
+            <div class="criterio-score">6/7</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Disponibilidad local</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">9/9 (máx)</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Seguridad de conexiones</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:70%"></div></div>
+            <div class="criterio-score">7/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Seguridad del usuario</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:90%"></div></div>
+            <div class="criterio-score">9/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Reutilización / reciclaje</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar mid" style="width:75%"></div></div>
+            <div class="criterio-score">6/8</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Comportamiento térmico</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">7/7 (máx)</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Resistencia a la humedad</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar mid" style="width:86%"></div></div>
+            <div class="criterio-score">6/7</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Herramientas requeridas</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:87%"></div></div>
+            <div class="criterio-score">7/8</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Costo de mantenimiento</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:70%"></div></div>
+            <div class="criterio-score">7/10</div>
+          </div>
+          <div class="criterio-row">
+            <div class="criterio-label">Facilidad de elaboración</div>
+            <div class="criterio-bar-wrap"><div class="criterio-bar high" style="width:100%"></div></div>
+            <div class="criterio-score">8/8 (máx)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ranking">
+        <div class="ranking-item pos-1">
+          <div class="ranking-pos">1°</div>
+          <div class="ranking-mat">Aro cuerda + marco madera 1"×2"</div>
+          <div class="ranking-pts">94 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">2°</div>
+          <div class="ranking-mat">Aro PTR 1" doblado en taller</div>
+          <div class="ranking-pts">91 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">3°</div>
+          <div class="ranking-mat">Aro madera laminada tiras 3mm</div>
+          <div class="ranking-pts">89 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">4°</div>
+          <div class="ranking-mat">Varilla roscada 3/8" + cuerda 4mm</div>
+          <div class="ranking-pts">87 pts</div>
+        </div>
+        <div class="ranking-item">
+          <div class="ranking-pos">5°</div>
+          <div class="ranking-mat">Panel triplay 12mm calado CNC</div>
+          <div class="ranking-pts">82 pts</div>
+        </div>
+      </div>
+
+      <div class="nota-pro" style="margin-top:16px;">
+        <div class="nota-icon">→</div>
+        <div class="nota-texto">El aro de cuerda sobre marco de madera gana y además cierra el lenguaje material del pabellón de manera unitaria — si se elige polín de pino como estructura y cuerda como celosía y cubierta, este elemento es la culminación coherente de todo el sistema. Es el más económico, el más ligero y el que más directamente dialoga con la imagen de referencia. El proceso de tejido radial es además el más significativo conceptualmente: converger desde el perímetro hacia el centro es exactamente lo que hace el recorrido del pabellón con el usuario.</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-left">
+    UDEM — Campus San Pedro Garza García<br>
+    Estudio de Elementos de Diseño — PR26
+  </div>
+  <div class="footer-center">PABELLÓN EFÍMERO — SITIO 03</div>
+  <div class="footer-right">
+    Presupuesto total: $30,000 MXN<br>
+    Duración: 6 meses — 14 personas
+  </div>
+</div>
+
+</body>
+</html>
